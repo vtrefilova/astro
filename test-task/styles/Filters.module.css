@@ -1,0 +1,19 @@
+.filters {
+    margin-top: 16px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.filters_metrics {
+    display: flex;
+    flex-direction: row;
+}

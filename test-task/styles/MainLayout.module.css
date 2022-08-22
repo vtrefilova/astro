@@ -1,0 +1,24 @@
+.layoutHeader {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 108px;
+    background-size: cover;
+    padding: 16px 30px;
+    z-index: 1000;
+}
+
+.linkBlock :first-child {
+    margin-right: 24px;
+}
+
+.logoBlock {
+}
+
+.logo {
+    margin: 0;
+    padding: 0;
+}

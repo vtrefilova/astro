@@ -1,0 +1,20 @@
+.page_body {
+  margin: 150px 30px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page_description {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.line {
+  border: 1px solid #D7D7D7;
+}
+

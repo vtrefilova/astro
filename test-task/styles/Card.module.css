@@ -1,0 +1,54 @@
+.card_block {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 19px;
+}
+
+.card {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    min-width: 271px;
+    margin-bottom: 34px;
+}
+
+.card_button {
+    background: #186DD6;
+    border-radius: 24px;
+    border: 0;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 11px 2px;
+    color: #FFFFFF;
+}
+
+.card_date {
+    margin-bottom: 8px;
+}
+
+.card_block_info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 11px;
+    }
+
+.card_block_with_icon {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.asteroid_name {
+text-decoration-line: underline;
+}
+
