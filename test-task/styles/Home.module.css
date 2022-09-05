@@ -1,5 +1,5 @@
 .page_body {
-  margin: 150px 30px 24px;
+  margin: 207px 30px 24px;
   display: flex;
   flex-direction: column;
 }
@@ -16,5 +16,34 @@
 
 .line {
   border: 1px solid #D7D7D7;
+}
+
+.filter_button {
+  background-color: #FFFFFF;
+}
+
+.one_more_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 373px) {
+  .page_body {
+      margin-top: 188px;
+  }
+}
+
+@media (min-width: 610px) {
+  .page_body {
+      margin-top: 169px;
+  }
+}
+
+@media (min-width: 760px) {
+  .page_body {
+      margin-top: 150px;
+  }
 }
 

@@ -5,7 +5,7 @@ import distanceIcon from '../images/distance_icon.svg';
 import Image from 'next/image';
 import styles from '../styles/Card.module.css';
 
-export const Card = ({date, name, diameter, distance, status, id}) => {
+export const Card = ({date, name, diameter, distance, status, id, metrics}) => {
     const month = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
     const d = new Date(date);
     const monthName = month[d.getMonth()];
@@ -25,13 +25,17 @@ export const Card = ({date, name, diameter, distance, status, id}) => {
                         <Image 
                             src={radiusIcon}
                         />
-                        {Math.round(diameter)} м
+                        <div style={{marginLeft: '7px'}}>{Math.round(diameter)} м</div>
                     </div>
                     <div className={styles.card_block_with_icon}>
                         <Image
                             src={distanceIcon}
                         />
-                        {Math.round(distance)} км
+                        <div>
+                            {metrics === 'km' ? 
+                            `${Math.round(distance.kilometers)} км` :
+                            `${Math.round(distance.lunar)} лунных орбит`}
+                        </div>
                     </div>
                     <div>{status ? 'Опасен' : 'Не опасен'}</div>
                 </div>

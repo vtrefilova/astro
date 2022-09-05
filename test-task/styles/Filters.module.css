@@ -2,9 +2,11 @@
     margin-top: 16px;
     margin-bottom: 40px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     font-family: 'Helvetica';
     font-style: normal;
     font-weight: 400;
@@ -16,4 +18,39 @@
 .filters_metrics {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filters_metrics :first-child {
+    margin-right: 4px;
+}
+
+.filters_metrics :last-child {
+    margin-left: 4px;
+}
+
+.filter_button {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: none;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 4px;
+    padding: 0;
+}
+
+.buttons_container :last-child {
+    margin-left: 40px;
+}
+
+.filter_button:hover{
+    text-decoration: underline;
+}
+
+.selected {
+    font-weight: 800;
 }

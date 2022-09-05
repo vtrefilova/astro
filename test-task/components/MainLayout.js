@@ -6,14 +6,13 @@ import backgroundImg from '../images/pic.jpg';
 
 export default function MainLayout({children}) {
     const [pic, setPic] = useState(backgroundImg.src);
-    /*useEffect(() => {
+    useEffect(() => {
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=sKc0vTjEqW4ggwGSUVvl5k8aoLKuLEuYevAhrcTz`)
             .then(res => {
                 const picOfTheDay = res.data.url;
                 setPic(picOfTheDay);
             })
-    }, [])
-    console.log(pic);*/
+    }, []);
 
     return (
         <>

@@ -12,7 +12,7 @@
     line-height: 24px;
     color: #000000;
     min-width: 271px;
-    margin-bottom: 34px;
+    margin: 0px 50px 34px;
 }
 
 .card_button {
@@ -48,7 +48,10 @@
     align-items: center;
 }
 
-.asteroid_name {
-text-decoration-line: underline;
+.card_block_with_icon > div {
+    margin-left: 4px;
 }
 
+.asteroid_name {
+    text-decoration-line: underline;
+}

@@ -5,8 +5,25 @@ import { CardsContainer } from '../components/CardsContainer';
 import axios from 'axios';
 import styles from '../styles/Home.module.css';
 import { Filters } from "../components/Filters";
+import { FilterContext } from "../contexts/contexts";
 
 export default function HomePage() {
+    const [metricsFilter, setMetricsFilter] = useState('km');
+    const [dangerFilter, setDangerFilter] = useState(false);
+    const filters = {
+        metrics: {
+            value: metricsFilter,
+            onMetricsChange: (e) => {
+                setMetricsFilter(e.target.id);
+            }
+        },
+        danger: {
+            value: dangerFilter,
+            handleToggle: () => {
+                setDangerFilter(prev => !prev);
+            }
+      }};
+
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 2);
@@ -62,42 +79,44 @@ export default function HomePage() {
             })
         }
     }, [fetching])
-
+    
     return (
-        <>
-        <style jsx global>{`
-            body {
-                padding: 0;
-                margin: 0;
-                font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-                  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-            }
-            a {
-                color: inherit;
-                text-decoration: none;
-              }
-              
-            * {
-            box-sizing: border-box;
-            }
-              
-            @media (prefers-color-scheme: dark) {
-            html {
-                color-scheme: dark;
-            }
-            body {
-                background-color: white;
-            }
-            }
-        `}</style>
-        <MainLayout>
-            <div className={styles.page_body}>
-                <div className={styles.page_description}>Ближайшие подлеты</div>
-                <div className={styles.line}/>
-                <Filters/>
-                <CardsContainer cards = {asteroidsList}/>
-            </div>
-        </MainLayout>
-        </>
+        <FilterContext.Provider value={filters}>
+            <style jsx global>{`
+                body {
+                    padding: 0;
+                    margin: 0;
+                    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+                    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+                }
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                }
+                
+                * {
+                box-sizing: border-box;
+                }
+                
+                @media (prefers-color-scheme: dark) {
+                html {
+                    color-scheme: dark;
+                }
+                body {
+                    background-color: white;
+                }
+                }
+            `}</style>
+            <MainLayout>
+                <div className={styles.page_body}>
+                    <div className={styles.page_description}>Ближайшие подлеты</div>
+                    <div className={styles.line}/>
+                    <Filters/>
+                    <div className={styles.one_more_container}>
+                        <CardsContainer cards = {asteroidsList}/>
+                    </div>
+                </div>
+            </MainLayout>
+        </FilterContext.Provider>
     )
 }
